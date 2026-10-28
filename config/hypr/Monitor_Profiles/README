@@ -1,0 +1,14 @@
+# 显示器预设
+
+`Super+Shift+E` → `Choose Monitor Profiles` 枚举本目录的 `.lua` 文件。选择后，脚本把预设复制到 `~/.config/hypr/monitors.lua` 并重载 Hyprland。预设只有在手动选择时应用，接通电源不会自动切换。
+
+| 预设 | 用途 |
+| --- | --- |
+| `laptop-240hz.lua` | eDP-1 内屏使用高刷新率，关闭 HDMI-A-1 |
+| `laptop-60hz.lua` | eDP-1 内屏使用低刷新率，关闭 HDMI-A-1 |
+| `dual-4k.lua` | HDMI-A-1 外接 4K 屏位于左侧，缩放 1.2；内屏在右侧 |
+| `default.lua` | 新预设的基本格式参考 |
+
+要微调分辨率、刷新率、缩放或坐标，编辑对应 Lua 文件后重新选择，也可直接编辑 `monitors.lua`。显示器接口与支持模式用 `hyprctl -j monitors all` 查看；位置按缩放后的逻辑尺寸计算。旧 `.conf` 预设不会出现在当前选择器中。
+
+外接屏未连接时，不要把预设已写入等同于双屏已验证。下拉终端会在调出时使用当前焦点显示器的位置和缩放。

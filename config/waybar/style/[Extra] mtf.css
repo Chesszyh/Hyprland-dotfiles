@@ -1,0 +1,211 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Cute Blue-Pink-White */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+@define-color bg #f9fbff;
+@define-color panel rgba(255, 255, 255, 0.82);
+@define-color chip rgba(255, 255, 255, 0.68);
+@define-color chip_strong rgba(246, 173, 219, 0.32);
+@define-color accent_blue #9cc4ff;
+@define-color accent_pink #f6addb;
+@define-color accent_ink #1f2a44;
+@define-color border rgba(156, 196, 255, 0.55);
+
+* {
+font-family: "LXGW WenKai", "JetBrainsMono Nerd Font", sans-serif;
+font-weight: bold;
+min-height: 0;
+font-size: 97%;
+font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+    background: linear-gradient(135deg, rgba(156, 196, 255, 0.15), rgba(246, 173, 219, 0.12), rgba(255, 255, 255, 0.9));
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+tooltip {
+    color: @accent_ink;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-radius: 6px;
+}
+
+tooltip label {
+    color: @accent_ink;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+/*-----module groups----*/
+.modules-left,
+.modules-center,
+.modules-right {
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    padding: 1px 4px;
+}
+
+#taskbar button,
+#workspaces button {
+    color: @accent_ink;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    text-shadow: none;
+    padding: 2px 6px;
+    margin: 1px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    color: #ffffff;
+    background: linear-gradient(135deg, @accent_blue, @accent_pink);
+    border-radius: 6px;
+    padding: 2px 8px;
+    border: none;
+}
+
+#workspaces button.focused {
+    color: #12325a;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    border-radius: 10px;
+    background: #ffd6e9;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    color: #0f1e35;
+    border-radius: 6px;
+    background: rgba(246, 173, 219, 0.4);
+    border: none;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default, 
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+    color: @accent_ink;
+    border-radius: 6px;
+    padding: 2px 4px;
+    background: transparent;
+    border: none;
+    margin: 0 1px;
+}
+
+#temperature.critical {
+    background-color: #ff0000;
+}
+
+@keyframes blink {
+    to {
+        color: #000000;
+    }
+}
+
+/*-----Indicators----*/
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+	color: #39FF14;
+}
+
+#battery.critical:not(.charging) {
+	color: #f53c3c;
+	animation-name: blink;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+	min-width: 0px;
+	min-height: 0px;
+	opacity: 0;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 80px;
+    min-height: 4px;
+    border-radius: 4px;
+    background: rgba(156, 196, 255, 0.25);
+    border: none;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, @accent_blue, @accent_pink);
+}

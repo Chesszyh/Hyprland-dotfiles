@@ -1,0 +1,14 @@
+[Unit]
+Description=Clipboard history watcher (%i)
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wl-paste --type %i --watch /usr/bin/python3 %h/.config/hypr/scripts/CliphistStore.py
+Restart=always
+RestartSec=1s
+
+[Install]
+WantedBy=graphical-session.target

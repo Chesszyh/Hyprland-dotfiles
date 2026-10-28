@@ -1,0 +1,14 @@
+[Unit]
+Description=Quickshell session UI
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/qs
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=graphical-session.target

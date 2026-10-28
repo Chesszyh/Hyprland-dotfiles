@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+config/hypr/sessions/
+config/hypr/wallpaper_effects/
+config/hypr/wallpaper-state
+config/rofi/.current_wallpaper
+config/quickshell/qml_color.json

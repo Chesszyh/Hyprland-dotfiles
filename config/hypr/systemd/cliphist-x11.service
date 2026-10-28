@@ -1,0 +1,14 @@
+[Unit]
+Description=XWayland clipboard history watcher
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=DISPLAY
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 %h/.config/hypr/scripts/X11CliphistWatch.py
+Restart=always
+RestartSec=1s
+
+[Install]
+WantedBy=graphical-session.target

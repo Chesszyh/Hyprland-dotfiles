@@ -1,0 +1,7 @@
+/* Dark Angel Wallpaper Picker Config */
+@import "~/.config/rofi/0-shared-fonts.rasi"
+configuration {
+    /* Removed modi: "drun" to allow dmenu mode to work correctly */
+    show-icons: true;
+}
+@theme "~/.config/rofi/themes/dark-angel-wallpaper-dark.rasi"

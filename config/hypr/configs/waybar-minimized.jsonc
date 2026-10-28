@@ -1,0 +1,9 @@
+{
+  "custom/minimized": {
+    "exec": "python3 $HOME/.config/hypr/scripts/minimized.py status",
+    "return-type": "json",
+    "interval": 2,
+    "on-click": "$HOME/.config/hypr/scripts/MacOSRestore.sh",
+    "tooltip": true
+  }
+}

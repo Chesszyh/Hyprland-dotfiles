@@ -1,0 +1,97 @@
+/**
+ * Dark Angel Wallpaper Picker - Abyss
+ */
+
+* {
+    bg:             rgba(3, 2, 4, 0.94);
+    surface:        rgba(13, 3, 6, 0.88);
+    surface-strong: rgba(25, 5, 10, 0.92);
+    border:         rgba(94, 18, 33, 0.82);
+    selected:       rgba(176, 0, 40, 0.58);
+    blood:          #ff1e3c;
+    bone:           #f4e7e9;
+    muted:          #a77a81;
+
+    font: "LXGW WenKai 14";
+    background-color: transparent;
+}
+
+window {
+    width:            1000px;
+    height:           650px;
+    location:         center;
+    anchor:           center;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @border;
+    border-radius:    16px;
+}
+
+mainbox {
+    padding:          18px;
+    spacing:          14px;
+    background-color: transparent;
+    children:         [ "inputbar", "listview" ];
+}
+
+inputbar {
+    padding:          12px;
+    background-color: @surface-strong;
+    border:           1px;
+    border-color:     @border;
+    border-radius:    12px;
+    children:         [ "entry" ];
+}
+
+entry {
+    horizontal-align: 0.5;
+    placeholder:      "Dark Angel Wallpapers";
+    placeholder-color: @muted;
+    text-color:       @bone;
+    background-color: transparent;
+    font:             "LXGW WenKai 16";
+}
+
+listview {
+    columns:          5;
+    lines:            2;
+    spacing:          18px;
+    padding:          0px;
+    background-color: transparent;
+    fixed-height:     true;
+    fixed-width:      true;
+    flow:             horizontal;
+}
+
+element {
+    orientation:      vertical;
+    padding:          9px;
+    border-radius:    14px;
+    background-color: @surface;
+    border:           1px;
+    border-color:     rgba(94, 18, 33, 0.40);
+    spacing:          8px;
+}
+
+element-icon {
+    size:             180px;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    background-color: transparent;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    padding:          4px;
+    border-radius:    8px;
+    background-color: rgba(3, 2, 4, 0.72);
+    text-color:       @bone;
+    font:             "LXGW WenKai 14";
+}
+
+element selected {
+    background-color: @selected;
+    border:           2px;
+    border-color:     @blood;
+}

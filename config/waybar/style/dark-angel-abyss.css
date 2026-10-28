@@ -1,0 +1,256 @@
+/* ----------------------------------------------------
+ * Dark Angel: Abyss (深渊黑红) Waybar Theme
+ * ---------------------------------------------------- */
+
+@define-color da_bg           rgba(7, 3, 5, 0.92);
+@define-color da_surface      rgba(18, 7, 12, 0.68);
+@define-color da_surface_card rgba(28, 9, 17, 0.88);
+@define-color da_border       rgba(94, 18, 33, 0.45);
+@define-color da_border_glow  rgba(255, 30, 60, 0.75);
+@define-color da_blood        #ff1e3c;
+@define-color da_wine         #8e001d;
+@define-color da_accent       #d51d3c;
+@define-color da_bone         #f4e7e9;
+@define-color da_muted        #a77a81;
+
+* {
+    font-family: "LXGW WenKai", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+window#waybar {
+    background: @da_bg;
+    color: @da_bone;
+    border: none;
+    border-bottom: 1px solid @da_border;
+    border-radius: 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.75);
+    padding: 0 8px;
+}
+
+window#waybar.hidden {
+    opacity: 0.3;
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(13, 3, 6, 0.96);
+    color: @da_bone;
+    border: 1px solid @da_border;
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+tooltip label {
+    color: @da_bone;
+    padding: 2px 4px;
+}
+
+/* Base module styling: subtle dark glass capsule */
+#window,
+#clock,
+#custom-weather,
+#custom-codexbar,
+#custom-light_dark,
+#custom-cava_mviz,
+#custom-playerctl,
+#custom-hint,
+#custom-minimized,
+#custom-hypridle,
+#tray,
+#network,
+#backlight,
+#battery,
+#pulseaudio,
+#temperature,
+#cpu,
+#memory,
+#disk,
+#power-profiles-daemon,
+.modules-center > widget > #group-notify,
+#group-laptop,
+#group-audio,
+#group-mobo_drawer,
+#group-status {
+    background: @da_surface;
+    color: @da_bone;
+    border: 1px solid @da_border;
+    border-radius: 8px;
+    padding: 2px 9px;
+    margin: 3px 2px;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Hover effect */
+#clock:hover,
+#custom-weather:hover,
+#custom-codexbar:hover,
+#custom-playerctl:hover,
+#network:hover,
+#group-laptop:hover,
+#group-audio:hover,
+#group-mobo_drawer:hover,
+#group-status:hover {
+    background: @da_surface_card;
+    border-color: @da_border_glow;
+    box-shadow: 0 0 8px rgba(255, 30, 60, 0.25);
+}
+
+/* Workspaces button styling (Centered) */
+#workspaces {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 3px 2px;
+}
+
+#workspaces button {
+    background: @da_surface;
+    color: @da_muted;
+    border: 1px solid @da_border;
+    border-radius: 8px;
+    padding: 2px 9px;
+    margin: 0 2px;
+    transition: all 0.25s ease;
+}
+
+#workspaces button:hover {
+    background: @da_surface_card;
+    color: @da_bone;
+    border-color: @da_accent;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @da_wine, @da_blood);
+    color: #ffffff;
+    border: 1px solid @da_border_glow;
+    box-shadow: 0 0 10px rgba(255, 30, 60, 0.45);
+    padding: 2px 12px;
+}
+
+#workspaces button.urgent {
+    background: @da_blood;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+#custom-hypridle.activated {
+    color: @da_blood;
+}
+
+#custom-hypridle.deactivated {
+    color: @da_muted;
+}
+
+/* Separators */
+#custom-separator {
+    color: @da_border;
+    background: transparent;
+    border: none;
+    font-size: 11px;
+    padding: 0 2px;
+    margin: 0;
+}
+
+/* Window title */
+#window {
+    background: transparent;
+    border: none;
+    color: @da_muted;
+    font-weight: bold;
+    padding: 2px 6px;
+}
+
+/* Clock & weather */
+#clock {
+    font-weight: 700;
+    color: @da_bone;
+    background: @da_surface_card;
+    border: 1px solid @da_border;
+}
+
+/* --- Abyssal Health / Resource Soul Slots --- */
+@keyframes blood-pulse {
+    0% { box-shadow: 0 0 4px rgba(255, 30, 60, 0.4); }
+    50% { box-shadow: 0 0 12px rgba(255, 30, 60, 0.85), inset 0 0 6px rgba(255, 30, 60, 0.5); }
+    100% { box-shadow: 0 0 4px rgba(255, 30, 60, 0.4); }
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#pulseaudio {
+    background: linear-gradient(180deg, rgba(20, 6, 12, 0.82) 0%, rgba(10, 3, 6, 0.9) 100%);
+    border: 1px solid rgba(110, 20, 38, 0.55);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.75), 0 1px 2px rgba(255, 30, 60, 0.05);
+    padding: 2px 10px;
+    margin: 3px 2px;
+    border-radius: 7px;
+}
+
+#battery {
+    background: linear-gradient(90deg, rgba(142, 0, 29, 0.45) 0%, rgba(14, 5, 9, 0.85) 100%);
+    border-color: rgba(176, 0, 40, 0.6);
+}
+
+#battery.charging {
+    background: linear-gradient(90deg, rgba(213, 29, 60, 0.55) 0%, rgba(30, 8, 16, 0.9) 100%);
+    border-color: @da_blood;
+    box-shadow: inset 0 0 6px rgba(255, 30, 60, 0.35), 0 0 8px rgba(255, 30, 60, 0.25);
+}
+
+#battery.warning {
+    background: linear-gradient(90deg, rgba(180, 50, 10, 0.55) 0%, rgba(20, 6, 10, 0.9) 100%);
+    border-color: #ff7a3c;
+    color: #ffaa77;
+    box-shadow: 0 0 8px rgba(255, 122, 60, 0.35);
+}
+
+#battery.critical:not(.charging) {
+    background: linear-gradient(90deg, rgba(255, 30, 60, 0.65) 0%, rgba(50, 5, 12, 0.95) 100%);
+    border-color: @da_blood;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 30, 60, 0.7), inset 0 0 8px rgba(255, 30, 60, 0.5);
+    animation: blood-pulse 1.8s infinite ease-in-out;
+}
+
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#battery:hover {
+    border-color: @da_blood;
+    box-shadow: 0 0 8px rgba(255, 30, 60, 0.35), inset 0 0 4px rgba(142, 0, 29, 0.3);
+}
+
+#pulseaudio.muted {
+    background: rgba(10, 4, 7, 0.6);
+    border-color: rgba(60, 15, 25, 0.4);
+    color: @da_muted;
+}
+
+/* Custom codexbar */
+#custom-codexbar {
+    color: @da_blood;
+    font-weight: 700;
+}
+
+/* Tray */
+#tray {
+    padding: 2px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

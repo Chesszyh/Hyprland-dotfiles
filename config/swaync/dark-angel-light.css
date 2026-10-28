@@ -1,0 +1,9 @@
+/* Dark Angel ashen SwayNC colors. */
+@define-color noti-bg rgba(23, 16, 19, 0.88);
+@define-color noti-bg-alt rgba(33, 20, 24, 0.76);
+@define-color noti-bg-hover rgba(56, 24, 33, 0.82);
+@define-color noti-border-color rgba(111, 39, 52, 0.62);
+@define-color text-color #F0E2E4;
+@define-color muted-text #B89399;
+@define-color cc-primary #D63A4E;
+@define-color cc-secondary #7B1D2A;

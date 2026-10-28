@@ -1,0 +1,14 @@
+[Unit]
+Description=Prevent automatic screen locking
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=notify
+NotifyAccess=all
+# systemd-inhibit clears NOTIFY_SOCKET before starting its child.
+ExecStart=/bin/sh -c 'exec /usr/bin/systemd-inhibit --what=idle --mode=block --who=Waybar --why=Prevent-automatic-screen-lock /usr/bin/env "NOTIFY_SOCKET=$$NOTIFY_SOCKET" /bin/sh -c "/usr/bin/systemd-notify --ready && exec /usr/bin/sleep infinity"'
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

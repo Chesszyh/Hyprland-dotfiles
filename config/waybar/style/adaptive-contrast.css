@@ -1,0 +1,79 @@
+@import url("../style.css");
+
+@define-color readable_tooltip_background #F9FBFF;
+@define-color readable_tooltip_foreground #172033;
+
+window#waybar {
+    color: @foreground;
+    background: transparent;
+}
+
+window#waybar * {
+    color: @foreground;
+    text-shadow: 0 0 3px @background;
+    -gtk-icon-shadow: 0 0 3px @background;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+}
+
+tooltip {
+    color: @readable_tooltip_foreground;
+    background: @readable_tooltip_background;
+    border: 1px solid alpha(@readable_tooltip_foreground, 0.18);
+    box-shadow: 0 2px 8px alpha(@readable_tooltip_foreground, 0.24);
+}
+
+tooltip *,
+tooltip label {
+    color: @readable_tooltip_foreground;
+    background: transparent;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+/* Tray menus inherit the bar's wallpaper colors and shadows without overrides. */
+menu,
+window#waybar menu {
+    color: @readable_tooltip_foreground;
+    background: @readable_tooltip_background;
+    border: 1px solid alpha(@readable_tooltip_foreground, 0.18);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+menu *,
+window#waybar menu * {
+    font-family: "LXGW WenKai", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: @readable_tooltip_foreground;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+menu menuitem {
+    min-height: 24px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+menu menuitem:hover {
+    background: #DFEAFE;
+}
+
+menu menuitem:disabled,
+menu menuitem:disabled *,
+window#waybar menu menuitem:disabled,
+window#waybar menu menuitem:disabled * {
+    color: #657087;
+}
+
+menu separator {
+    min-height: 1px;
+    margin: 4px 8px;
+    background: alpha(@readable_tooltip_foreground, 0.16);
+}

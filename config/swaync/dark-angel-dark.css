@@ -1,0 +1,9 @@
+/* Dark Angel dark SwayNC colors. */
+@define-color noti-bg rgba(3, 2, 4, 0.84);
+@define-color noti-bg-alt rgba(13, 3, 6, 0.76);
+@define-color noti-bg-hover rgba(37, 7, 16, 0.82);
+@define-color noti-border-color rgba(94, 18, 33, 0.62);
+@define-color text-color #F4E7E9;
+@define-color muted-text #A77A81;
+@define-color cc-primary #FF1E3C;
+@define-color cc-secondary #8E001D;

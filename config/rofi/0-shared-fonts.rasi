@@ -1,0 +1,12 @@
+/**
+ * Global Font Configuration - Dark Angel
+ * Using LXGW WenKai for all components
+ */
+
+configuration {
+    font: "LXGW WenKai 16";
+}
+
+element-text {
+    font: "LXGW WenKai 16";
+}

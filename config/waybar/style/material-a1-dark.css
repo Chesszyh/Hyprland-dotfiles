@@ -1,0 +1,19 @@
+/* Material A-1 dark Waybar color aliases. */
+@define-color material-a1-background rgba(7, 7, 10, 0.82);
+@define-color material-a1-surface rgba(18, 10, 13, 0.74);
+@define-color material-a1-surface-elevated rgba(38, 13, 20, 0.82);
+@define-color material-a1-primary #FF2B4B;
+@define-color material-a1-secondary #8E001D;
+@define-color material-a1-accent #D51D3C;
+@define-color material-a1-text #F7E8EA;
+@define-color material-a1-muted #BFA8AD;
+@define-color material-a1-border rgba(94, 24, 36, 0.58);
+@define-color material-a1-glow rgba(176, 0, 40, 0.34);
+@define-color bg @material-a1-background;
+@define-color panel @material-a1-surface;
+@define-color chip @material-a1-surface-elevated;
+@define-color chip_strong @material-a1-glow;
+@define-color accent_blue @material-a1-primary;
+@define-color accent_pink @material-a1-secondary;
+@define-color accent_ink @material-a1-text;
+@define-color border @material-a1-border;

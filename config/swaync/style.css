@@ -1,0 +1,304 @@
+/* Dark Angel notification center */
+
+@import '../../.config/waybar/wallust/colors-waybar.css';
+
+@define-color trans-blue #FF1E3C;
+@define-color trans-pink #8E001D;
+@define-color trans-white #F4E7E9;
+@define-color noti-border-color rgba(94, 18, 33, 0.62);
+@define-color noti-bg rgba(3, 2, 4, 0.84);
+@define-color noti-bg-alt rgba(13, 3, 6, 0.76);
+@define-color noti-bg-hover rgba(37, 7, 16, 0.82);
+@define-color text-color #F4E7E9;
+@define-color muted-text #A77A81;
+@define-color cc-primary #FF1E3C;
+@define-color cc-secondary #8E001D;
+
+@import 'dark-angel-current.css';
+
+* {
+    font-family: "LXGW WenKai", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    opacity: 1;
+    background: linear-gradient(135deg, rgba(255, 30, 60, 0.12), rgba(142, 0, 29, 0.16));
+    border-radius: 12px;
+}
+
+.notification-row {
+    outline: none;
+}
+
+.notification {
+    background: linear-gradient(135deg, rgba(7, 3, 5, 0.92), rgba(25, 5, 10, 0.85));
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid @noti-border-color;
+    box-shadow:
+        0 0 0 1px rgba(255, 30, 60, 0.14),
+        0 14px 42px rgba(0, 0, 0, 0.55),
+        0 0 24px rgba(176, 0, 40, 0.16),
+        inset 0 1px 0 rgba(244, 231, 233, 0.08);
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+}
+
+.close-button {
+    background: rgba(255, 30, 60, 0.65);
+    color: #030204;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.close-button:hover {
+    box-shadow: 0 0 8px rgba(255, 30, 60, 0.8);
+    background: #F4E7E9;
+    color: #030204;
+    transition: all .15s ease-in-out;
+}
+
+.notification-action {
+    background: rgba(13, 3, 6, 0.75);
+    border: 1px solid rgba(94, 18, 33, 0.58);
+    border-radius: 8px;
+    color: @text-color;
+    padding: 4px 8px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: @text-color;
+    background: linear-gradient(135deg, rgba(255, 30, 60, 0.22), rgba(142, 0, 29, 0.32));
+    border-color: rgba(255, 30, 60, 0.65);
+}
+
+.inline-reply {
+    margin-top: 8px;
+}
+
+.inline-reply-entry {
+    background: @noti-bg;
+    color: @text-color;
+    caret-color: @text-color;
+    border: 1px solid @noti-border-color;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.inline-reply-button {
+    font-size: 0.85rem;
+    margin-left: 4px;
+    background: @noti-bg-alt;
+    border: 1px solid rgba(94, 18, 33, 0.58);
+    border-radius: 8px;
+    color: @text-color;
+}
+
+.inline-reply-button:hover {
+    background: @noti-bg-hover;
+}
+
+.body-image {
+    margin-top: 6px;
+    border-radius: 8px;
+}
+
+.summary {
+    font-size: 1rem;
+    font-weight: 700;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+}
+
+.time {
+    font-size: 0.8rem;
+    font-weight: normal;
+    background: transparent;
+    color: @muted-text;
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.body {
+    font-size: 0.9rem;
+    background: transparent;
+    color: @muted-text;
+    text-shadow: none;
+}
+
+.control-center {
+    background: linear-gradient(135deg, rgba(7, 3, 5, 0.94), rgba(22, 5, 10, 0.88));
+    border: 1px solid @noti-border-color;
+    color: @text-color;
+    border-radius: 14px;
+    box-shadow:
+        0 0 0 1px rgba(255, 30, 60, 0.14),
+        0 18px 54px rgba(0, 0, 0, 0.58),
+        0 0 32px rgba(176, 0, 40, 0.16);
+    padding: 8px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+    color: @muted-text;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: alpha(black, 0.1);
+}
+
+.widget-title {
+    color: @text-color;
+    background: linear-gradient(135deg, rgba(255, 30, 60, 0.14), rgba(142, 0, 29, 0.20));
+    padding: 8px 12px;
+    margin: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 18, 33, 0.45);
+}
+
+.widget-title > button {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: @text-color;
+    border-radius: 6px;
+    background: rgba(13, 3, 6, 0.70);
+    border: 1px solid rgba(94, 18, 33, 0.58);
+    padding: 3px 8px;
+}
+
+.widget-title > button:hover {
+    background: rgba(255, 30, 60, 0.75);
+    color: #030204;
+}
+
+.widget-dnd {
+    background: @noti-bg-alt;
+    padding: 8px 12px;
+    margin: 4px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: @text-color;
+    border: 1px solid rgba(94, 18, 33, 0.35);
+}
+
+.widget-dnd > switch {
+    border-radius: 12px;
+    border: 1px solid rgba(94, 18, 33, 0.72);
+    background: rgba(142, 0, 29, 0.45);
+}
+
+.widget-dnd > switch:checked {
+    background: linear-gradient(135deg, #8E001D, #FF1E3C);
+    border: 1px solid rgba(255, 30, 60, 0.90);
+}
+
+.widget-dnd > switch slider {
+    background: #F4E7E9;
+    border-radius: 12px;
+}
+
+/* Sliders styling across GTK */
+scale {
+    margin: 4px;
+}
+
+scale trough {
+    min-height: 6px;
+    background: rgba(25, 5, 10, 0.85);
+    border-radius: 999px;
+    border: 1px solid rgba(94, 18, 33, 0.35);
+}
+
+scale highlight {
+    background: linear-gradient(90deg, #8E001D, #FF1E3C);
+    border-radius: 999px;
+}
+
+scale slider {
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+    background: #F4E7E9;
+    box-shadow: 0 0 6px rgba(255, 30, 60, 0.5);
+}
+
+/* MPRIS if displayed */
+.widget-mpris {
+    color: @text-color;
+    background: @noti-bg;
+    padding: 6px 10px;
+    margin: 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(94, 18, 33, 0.45);
+}
+
+.widget-mpris-player {
+    padding: 4px;
+}
+
+.widget-mpris-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 0.8rem;
+    color: @muted-text;
+}
+
+/* Buttons grid if displayed */
+.widget-buttons-grid {
+    color: @noti-border-color;
+    padding: 4px;
+    margin: 4px;
+    border-radius: 10px;
+    background: @noti-bg-alt;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    margin: 2px;
+    background: @noti-bg;
+    border-radius: 8px;
+    color: @text-color;
+    border: 1px solid rgba(94, 18, 33, 0.45);
+    padding: 6px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @cc-primary;
+    color: #030204;
+}
+
+/* Scrollbars */
+scrollbar slider {
+    background: rgba(255, 30, 60, 0.35);
+    border-radius: 8px;
+}
+
+scrollbar slider:hover {
+    background: rgba(255, 30, 60, 0.65);
+}

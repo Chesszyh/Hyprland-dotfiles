@@ -1,0 +1,28 @@
+{
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.2,
+  "workbench.colorCustomizations": {
+    "foreground": "#E0E0E0",
+    "descriptionForeground": "#BEBEBE",
+    "sideBar.foreground": "#E6E6E6",
+    "[Red Dwarf]": {
+      "editor.background": "#050204",
+      "sideBar.background": "#080305",
+      "activityBar.background": "#050204",
+      "statusBar.background": "#080305",
+      "titleBar.activeBackground": "#050204",
+      "editorCursor.foreground": "#ff1e3c",
+      "editor.selectionBackground": "#8e001d55",
+      "editor.lineHighlightBackground": "#12050966",
+      "editorIndentGuide.activeBackground1": "#ff1e3c55",
+      "terminal.background": "#050204"
+    }
+  },
+  "editor.fontSize": 16,
+  "debug.console.fontSize": 16,
+  "editor.fontVariations": false,
+  "editor.fontFamily": "'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace",
+  "editor.inlayHints.fontFamily": "'IBM Plex Mono', monospace",
+  "debug.console.fontFamily": "'IBM Plex Mono', 'FiraCode Nerd Font Mono', monospace",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'JetBrainsMono Nerd Font Mono', monospace"
+}

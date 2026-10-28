@@ -1,0 +1,22 @@
+/* Dark Angel Launcher Config */
+@import "~/.config/rofi/0-shared-fonts.rasi"
+configuration {
+    modi: "combi,drun,run,filebrowser,window";
+    combi-modi: "drun,run";
+    show-icons: true;
+    display-drun: "󰀻 ";
+    display-run: "󰁔 ";
+    display-filebrowser: "󰉋 ";
+    display-window: "󱂬 ";
+    display-combi: "󰀻 ";
+    drun-display-format: "{name}";
+    
+    /* Terminal settings */
+    terminal: "kitty";
+    run-command: "{cmd}";
+    run-shell-command: "{terminal} -e {cmd}";
+    
+    hover-select: true;
+    scroll-method: 1;
+}
+@theme "~/.config/rofi/themes/dark-angel-launcher-dark.rasi"

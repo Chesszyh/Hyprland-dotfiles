@@ -1,0 +1,135 @@
+/**
+ * Dark Angel Launcher - Ashen fallback
+ */
+
+* {
+    bg:             rgba(23, 16, 19, 0.94);
+    surface:        rgba(33, 20, 24, 0.88);
+    surface-strong: rgba(43, 23, 29, 0.92);
+    border:         rgba(111, 39, 52, 0.82);
+    selected:       rgba(165, 31, 53, 0.52);
+    blood:          #d63a4e;
+    wine:           #7b1d2a;
+    bone:           #f0e2e4;
+    muted:          #b89399;
+
+    font: "LXGW WenKai 16";
+    background-color: transparent;
+}
+
+window {
+    width:            1080px;
+    height:           640px;
+    location:         center;
+    anchor:           center;
+    background-color: @bg;
+    border:           2px;
+    border-color:     @border;
+    border-radius:    16px;
+}
+
+mainbox {
+    padding:          18px;
+    spacing:          12px;
+    background-color: transparent;
+    children:         [ "inputbar", "mode-switcher", "message", "listview" ];
+}
+
+inputbar {
+    children:         [ "prompt", "entry" ];
+    background-color: @surface-strong;
+    border:           1px;
+    border-color:     @border;
+    border-radius:    12px;
+    padding:          10px 12px;
+}
+
+prompt {
+    background-color: @blood;
+    text-color:       #171013;
+    border-radius:    8px;
+    padding:          6px 12px;
+    margin:           0px 10px 0px 0px;
+}
+
+entry {
+    padding:          6px 8px;
+    text-color:       @bone;
+    background-color: transparent;
+    placeholder:      "Dark Angel";
+    placeholder-color: @muted;
+}
+
+mode-switcher {
+    spacing:          10px;
+    background-color: transparent;
+}
+
+button {
+    padding:          9px 12px;
+    border-radius:    9px;
+    background-color: @surface;
+    text-color:       @muted;
+    border:           1px;
+    border-color:     rgba(111, 39, 52, 0.48);
+}
+
+button selected {
+    background-color: @selected;
+    text-color:       @bone;
+    border-color:     @blood;
+}
+
+listview {
+    columns:          2;
+    lines:            9;
+    spacing:          7px;
+    padding:          2px;
+    background-color: transparent;
+    fixed-height:     true;
+}
+
+element {
+    padding:          9px 11px;
+    border-radius:    10px;
+    spacing:          10px;
+    background-color: transparent;
+    text-color:       @bone;
+    border:           1px;
+    border-color:     transparent;
+}
+
+element alternate.normal {
+    background-color: rgba(33, 20, 24, 0.44);
+}
+
+element-icon {
+    size:             34px;
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    font:             "LXGW WenKai 15";
+}
+
+element selected {
+    background-color: @selected;
+    text-color:       @bone;
+    border-color:     @blood;
+}
+
+message {
+    padding:          8px 12px;
+    border-radius:    10px;
+    background-color: @surface-strong;
+    border:           1px;
+    border-color:     @border;
+}
+
+textbox {
+    background-color: transparent;
+    text-color:       @muted;
+    font:             "LXGW WenKai 13";
+}

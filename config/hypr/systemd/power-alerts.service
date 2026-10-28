@@ -1,0 +1,12 @@
+[Unit]
+Description=External power and low battery alerts
+PartOf=graphical-session.target
+After=graphical-session.target swaync.service
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/UserScripts/PowerAlerts.sh
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

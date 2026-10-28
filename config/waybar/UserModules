@@ -1,0 +1,18 @@
+//* ---- 💫 https://github.com/JaKooLit 💫 ---- *//
+/* Waybar Modules Extras */
+
+/* This is where you can add Extra Modules you wish. copy.sh will try to restore*/
+/* this file along with the unique configs and styles. */
+/* IMPORTANT, be mindful with , or ". else waybar will not start */
+
+{
+"reload_style_on_change": true,
+"custom/codexbar": {
+	"exec": "codexbar --remaining --no-color",
+	"return-type": "json",
+	"interval": 300,
+	"signal": 12,
+	"tooltip": true,
+	"on-click": "xdg-open https://chatgpt.com/codex/cloud/settings/analytics#usage",
+},
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodically save Hyprland applications and workspaces
+PartOf=graphical-session.target
+
+[Timer]
+OnActiveSec=2min
+OnUnitActiveSec=2min
+Unit=hyprland-session-save.service
+
+[Install]
+WantedBy=graphical-session.target
